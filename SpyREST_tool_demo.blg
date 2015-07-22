@@ -22,45 +22,45 @@ Warning--I didn't find a database entry for "DBLP:conf/icsm/2012"
 Warning--empty booktitle in Espinha_web
 
 Done.
-You've used 13 entries,
+You've used 14 entries,
             4039 wiz_defined-function locations,
-            1303 strings with 17679 characters,
-and the built_in function-call counts, 11169 in all, are:
-= -- 875
-> -- 226
+            1309 strings with 17836 characters,
+and the built_in function-call counts, 11512 in all, are:
+= -- 910
+> -- 230
 < -- 103
-+ -- 130
-- -- 33
-* -- 540
-:= -- 1597
-add.period$ -- 31
-call.type$ -- 13
-change.case$ -- 13
++ -- 132
+- -- 34
+* -- 552
+:= -- 1674
+add.period$ -- 33
+call.type$ -- 14
+change.case$ -- 14
 chr.to.int$ -- 249
-cite$ -- 14
-duplicate$ -- 792
-empty$ -- 973
-format.name$ -- 44
-if$ -- 2629
+cite$ -- 15
+duplicate$ -- 818
+empty$ -- 1000
+format.name$ -- 45
+if$ -- 2701
 int.to.chr$ -- 0
-int.to.str$ -- 13
-missing$ -- 132
-newline$ -- 62
-num.names$ -- 13
-pop$ -- 309
+int.to.str$ -- 14
+missing$ -- 138
+newline$ -- 65
+num.names$ -- 14
+pop$ -- 320
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 878
+skip$ -- 907
 stack$ -- 0
-substring$ -- 594
-swap$ -- 645
+substring$ -- 595
+swap$ -- 662
 text.length$ -- 20
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 13
+type$ -- 14
 warning$ -- 1
-while$ -- 56
-width$ -- 15
-write$ -- 148
+while$ -- 57
+width$ -- 16
+write$ -- 157
 (There was 1 error message)

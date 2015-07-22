@@ -21,6 +21,20 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
+\bibitem{Fielding_rest}
+R.~T. Fielding, ``Architectural styles and the design of network-based software
+  architectures,'' Ph.D. dissertation, University of California, Irvine, 2000.
+
+\bibitem{Espinha_web}
+T.~Espinha, A.~Zaidman, and H.-G. Gross, ``Web {API} growing pains: Stories
+  from client developers and their code.''\hskip 1em plus 0.5em minus
+  0.4em\relax IEEE, 2014, pp. 84--93.
+
+\bibitem{Danielsen_validation}
+P.~Danielsen and A.~Jeffrey, ``Validation and interactivity of web {API}
+  documentation,'' in \emph{International Conference on Web Services}.\hskip
+  1em plus 0.5em minus 0.4em\relax IEEE, 2013, pp. 523--530.
+
 \bibitem{Robillard_what_makes}
 M.~Robillard, ``What makes {API}s hard to learn? the answers of developers,''
   \emph{Software, IEEE}, vol.~PP, no.~99, pp. 1--1, 2011.
@@ -61,16 +75,6 @@ C.~Chen and K.~Zhang, ``Who asked what: Integrating crowdsourced faqs into api
 E.~Stepalina, ``{SaaS} support in software documentation systems,'' in
   \emph{Software Engineering Conference (CEE-SECR), 2010 6th Central and
   Eastern European}, 2010, pp. 192--197.
-
-\bibitem{Espinha_web}
-T.~Espinha, A.~Zaidman, and H.-G. Gross, ``Web {API} growing pains: Stories
-  from client developers and their code.''\hskip 1em plus 0.5em minus
-  0.4em\relax IEEE, 2014, pp. 84--93.
-
-\bibitem{Danielsen_validation}
-P.~Danielsen and A.~Jeffrey, ``Validation and interactivity of web {API}
-  documentation,'' in \emph{International Conference on Web Services}.\hskip
-  1em plus 0.5em minus 0.4em\relax IEEE, 2013, pp. 523--530.
 
 \bibitem{Verborgh_functional}
 R.~Verborgh, T.~Steiner, D.~Van~Deursen, S.~Coppens, J.~G. Vall{\'e}s, and
