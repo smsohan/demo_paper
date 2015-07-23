@@ -35,6 +35,11 @@ P.~Danielsen and A.~Jeffrey, ``Validation and interactivity of web {API}
   documentation,'' in \emph{International Conference on Web Services}.\hskip
   1em plus 0.5em minus 0.4em\relax IEEE, 2013, pp. 523--530.
 
+\bibitem{Sohan_spyrest}
+S.~Sohan, C.~Anslow, and M.~Frank, ``{SpyREST}: Automated {RESTful API}
+  documentation using {HTTP} proxy server,'' in \emph{to appear in IEEE/ACM
+  International Conference on Automated Software Engineering}, 2015.
+
 \bibitem{Robillard_what_makes}
 M.~Robillard, ``What makes {API}s hard to learn? the answers of developers,''
   \emph{Software, IEEE}, vol.~PP, no.~99, pp. 1--1, 2011.
