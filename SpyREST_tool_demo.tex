@@ -13,7 +13,7 @@
 \fi
 \usepackage{url}
 \usepackage{upquote}
-
+\usepackage{mdframed}
 
 \hyphenation{op-tical net-works semi-conduc-tor}
 
@@ -30,7 +30,7 @@ Email: \{smsohan, craig.anslow, frank.maurer\}@ucalgary.ca  }
 
 
 \begin{abstract}
-RESTful APIs are often manually documented. As a result, the process is both expensive and error-prone to maintain the documentation of RESTful APIs. In this demonstration paper, we present SpyREST as an automated software as a service tool that can be used to document RESTful APIs. SpyREST leverages a HTTP Proxy server to intercept real API calls to automatically collect and generate RESTful API documentation by synthesizing HTTP traffic involved in API calls. SpyREST provides an automated yet customizable example based documentation solutions for RESTful APIs. Our preliminary evaluation of SpyREST generated documentation vs. manually generated documentation was able to catch outdated documentation for 5 of the 25 APIs that were evaluated from 3 different products. RESTful API developers can use SpyREST to automatically generate and maintain updated API documentation.
+RESTful APIs are often manually documented. As a result, the process is both expensive and error-prone to maintain the documentation of RESTful APIs. In this demonstration paper, we present SpyREST as an automated software as a service tool that can be used to document RESTful APIs. SpyREST leverages a HTTP Proxy server to intercept real API calls to automatically collect and generate RESTful API documentation by synthesizing HTTP traffic involved in API calls. SpyREST provides an automated yet customizable example based documentation solutions for RESTful APIs. RESTful API developers can use SpyREST to automatically generate and maintain updated API documentation.
 
 \end{abstract}
 
@@ -48,9 +48,6 @@ Automated solutions exist for documentation of local APIs within the context of 
 Our key contribution with SpyREST is providing the necessary tool support to address the unique needs for RESTful API documentation. To this regard, in the next section we have discussed the design goals followed by a HTTP proxy server based prototype implementation to demonstrate an automated RESTful API documentation tool. Then, we presented two use cases to show how API developers can use SpyREST to automatically generate and maintain RESTful API documentation. In the discussion and related work section, we have compared SpyREST against other tools and provided an analysis of how the requirements for SpyREST are derived.
 
 \section{SpyREST}
-
-\subsection{Link to Web Page}
-\url{http://SpyREST.com}
 
 \subsection{Design} % (fold)
 \label{sub:how_it_works}
@@ -105,24 +102,26 @@ Even though the auto detected API version, resource and actions cover the common
 
 The Web App component is implemented using Ruby on Rails. To allow RESTful API developers to edit auto generated documentation, the Web App uses the Markdown Syntax. To facilitate collaboration across all the API documentation pages, the Web App uses Disqus, a popular third-party collaboration service, for commenting.
 
-The Spy writes the captured and synthesized API example data into a MongoDB database. The Web App reads and saves custom edits on the same database. The technology choice behind for our implementation of SpyREST components is based on our past experience of using these tools but the concepts behind SpyREST is not dependent on the aforementioned technology choice. As a proof of concept, SpyREST only analyzes JSON based API request and response payloads.
+The Spy writes the captured and synthesized API example data into a MongoDB database. The Web App reads and saves custom edits on the same database.
 
 All three SpyREST components are released as Docker containers. Docker is a lightweight virtualization solution that can either be hosted in-house or using many of the popular cloud hosting providers. The public instance of SpyREST has been tested with the three components in three separate docker containers running on a single linux server with 512MB memory, 1 core processor, and 20GB disk space.
 
 \begin{figure*}[!tbh]
-  \centering
-  \begin{subfigure}[t]{0.4\textwidth}
-    \includegraphics[width=\linewidth]{summary.png}
-    \caption{API documentation summary section}
-    \label{fig:summary}
-  \end{subfigure}
-  \begin{subfigure}[t]{0.5\textwidth}
-    \includegraphics[width=\linewidth]{examples.png}
-    \caption{API documentation examples section}
-    \label{fig:examples}
-  \end{subfigure}
-  \caption{SpyREST Screen shots showing auto generated API documentation}
-  \label{fig:spyrest_screenshots}
+  \begin{mdframed}
+    \centering
+    \begin{subfigure}[t]{0.4\textwidth}
+      \includegraphics[width=\linewidth]{summary.png}
+      \caption{API documentation summary section}
+      \label{fig:summary}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.5\textwidth}
+      \includegraphics[width=\linewidth]{examples.png}
+      \caption{API documentation examples section}
+      \label{fig:examples}
+    \end{subfigure}
+    \caption{SpyREST Screen shots showing auto generated API documentation}
+    \label{fig:spyrest_screenshots}
+  \end{mdframed}
 \end{figure*}
 
 \section{Use Cases}
@@ -167,16 +166,18 @@ describe 'Notifications' do
 
 end\end{lstlisting}
 
-Listing \ref{lst:notifications} shows an example script written using the Ruby based test framework Minitest. In this example script, the class \texttt{Github} is setup so that the Spy proxy server is used to make example API calls. Then, on line 21 an example API call automatically generates a documentation for the \texttt{GET /notifications} API action. The results of the API call can be used to test against expected results. Using this script a developer may generate the documentation for this API and auto-update the documentation by rerunning the script anytime the API changes while still providing test coverage.
+Listing \ref{lst:notifications} shows an example script written using the Ruby based test framework Minitest. In this example script, the class \texttt{Github} is setup so that the Spy proxy server is used to make example API calls. \texttt{HTTParty} is a third-party library for making RESTful API calls. Then the required headers are setup for using GitHub API. Finally, we setup the proxy connection to SpyREST server. Then, on line 17-25, we define an example API call as an automated test script to generates a documentation for the \texttt{GET /notifications} API action with three query parameters \texttt{all, participating}, and \texttt{since}. The results of the API call can be used to test against expected results. Using this script SpyREST will generate the documentation for this API and auto-update the documentation by rerunning the script anytime the API changes while still providing test coverage.
 
 \section{Discussion}
-With SpyREST we have aimed to provide a solution to RESTful API documentation. Manual approach is both expensive and error-prone. SpyREST offers several benefits over existing API documentation tools. Most general purpose API documentation tools such as JavaDoc extract documentation based on formatted comments from the source code. Since comments are not executable code, manual effort is required to keep the comments updated as the underlying API changes. RESTful API documentation typically includes additional information about HTTP headers, request and response payloads as well as example API calls that are not natively supported by general purpose API documentation tools. Also, general purpose API documentation tools are often programming language specific. SpyREST overcomes these limitations of code comments based API documentation tools by leveraging a HTTP proxy server where executable API examples are converted into API documentation that can be used to document RESTful APIs independent of how the RESTful APIs are implemented.
-
-SpyREST offers unique features compared to several commercially available RESTful API documentation services. Swagger\footnote{https://github.com/swagger-api/swagger-spec/blob/master/versions/2.0.md} and Blueprint\footnote{https://github.com/apiaryio/api-blueprint} are two popular software as a service tools for RESTful API documentation. The key difference between SpyREST and these tools is in the underlying approach used. These tools require the API developers to follow custom vendor specific API specification formats to describe the API objects. Once the APIs are described, the tools can auto-generate the documentations for the APIs. There is no automated tool support to generate the required API description in the vendor specific formats. Thus manual effort is required to produce the required API specifications and maintain it over time. SpyREST does not require on any intermediate API specification since data for documentation is sourced based on live API calls. This eliminates the need for an intermediate step. The commercially cannot be used as a self-hosted service. SpyREST can be used as a self-hosted service to document RESTful APIs that cannot be externally shared for confidentiality issues.
+With SpyREST we have aimed to provide a solution to RESTful API documentation. Manual approach is both expensive and error-prone. SpyREST offers several benefits over existing API documentation tools. We performed a preliminary evaluation of SpyREST by generating documentation of 25 RESTful API actions from 3 different APIs providers (Github.com, KISSMetrics.com, LiquidPlanner.com) using 272 lines of test code\footnote{\url{https://github.com/smsohan/spyrest_examples}}. Comparing SpyREST generated documents against the official documentation (manually generated) we found that the official documentation for 5 of the 25 API actions had outdated response information that didn't match with the actual API responses as captured by SpyREST. This is an expected advantage of automation, since an updated documentation can be produced by replaying existing scripts instead of requiring any manual efforts.
 
 Using automated tests to generate documentation serves a dual purpose for maintaining a test suite since the documentation of the RESTful API becomes an artifact of execution of tests. This is a unique advantage of SpyREST over other API documentation tools that translate manually edited API descriptions into API documents instead of executing actual API calls.
 
-We performed a preliminary evaluation of SpyREST by generating documentation of 25 RESTful API actions from 3 different APIs providers (Github.com, KISSMetrics.com, LiquidPlanner.com) using 272 lines of test code\footnote{\url{https://github.com/smsohan/spyrest_examples}}. Comparing SpyREST generated documents against the official documentation we found that the official documentation for 5 of the 25 API actions had outdated response information that didn't match with the actual API responses as captured by SpyREST. This is an expected advantage of automation, since an updated documentation can be produced by replaying existing scripts instead of requiring any manual efforts.
+Most general purpose API documentation tools such as JavaDoc extract documentation based on formatted comments from the source code. Since comments are not executable code, manual effort is required to keep the comments updated as the underlying API changes. RESTful API documentation typically includes additional information about HTTP headers, request and response payloads as well as example API calls that are not natively supported by general purpose API documentation tools. Also, general purpose API documentation tools are often programming language specific. SpyREST overcomes these limitations of code comments based API documentation tools by leveraging a HTTP proxy server where executable API examples are converted into API documentation that can be used to document RESTful APIs independent of how the RESTful APIs are implemented.
+
+SpyREST offers unique features compared to other RESTful API documentation services. Swagger\footnote{https://github.com/swagger-api/swagger-spec/blob/master/versions/2.0.md} and Blueprint\footnote{https://github.com/apiaryio/api-blueprint} are two software as a service tools for RESTful API documentation. The key difference between SpyREST and these tools is in the underlying approach used. These tools require the API developers to follow custom vendor specific API specification formats to describe the API objects. Once the APIs are described, the tools can auto-generate the documentations for the APIs. There is no automated tool support to generate the required API description in the vendor specific formats. Thus manual effort is required to produce the required API specifications and maintain it over time. SpyREST does not require on any intermediate API specification since data for documentation is sourced based on live API calls. This eliminates the need for an intermediate step. Unlike SpyREST, Swagger and Blueprint cannot be used as a self-hosted service to document RESTful APIs that cannot be externally shared for confidentiality issues.
+
+The technology choice behind for our implementation of SpyREST components is based on our past experience of using these tools but the concepts behind SpyREST is not dependent on the aforementioned technology choice. As a proof of concept, SpyREST only analyzes JSON based API request and response payloads.
 
 SpyREST is a proof of concept implementation for a novel RESTful API documentation technique. We identify the following limitations. An evaluation with a large number of RESTful APIs as well as evaluation involving API developers is required to understand the strengths and weaknesses of SpyREST. The current implementation of SpyREST only works on JSON based RESTful APIs. SpyREST needs to be enhanced to support other data types such as XML, and CSV. SpyREST, like other HTTP proxy servers, performs an intentional ``man in the middle attack'' to intercept HTTP traffic for example API calls over SSL/TLS. We consider the security impact of this approach to be low since the data is commonly meant to be included in documentation for public use. Otherwise, API developers can use the self-hosted mode and provide SpyREST with the required SSL keys.
 
@@ -186,9 +187,7 @@ Several papers have studied API documentation to understand and recommend requir
 
 Several papers have discussed the topic of RESTful API documentation. Espinha et al. found most RESTful API documentations to be less reliable because they are manually generated \cite{Espinha_web}. Danielsen et al. proposed a vocabulary called Web Interface Language (WIfL) for documenting RESTful APIs so that different APIs can be described using a standard terminology \cite{Danielsen_validation}. RESTdesc, RDDL and hRESTS have been proposed as custom specifications to describe RESTful APIs \cite{Verborgh_functional, Mangler_rddl, Kopecky_hrests}. For RESTful API documentation, Myers et al. recommended providing a consistent look-and-feel and an overall map comprising of both text and diagrams, providing a browsing experience with breadcrumb trail following a hierarchy, an effective search interface, providing example code and a way to exercise the examples without writing code.
 
-In addition to the research papers, several tools exist that are used for API documentation. Tools similar to JavaDoc\footnote{http://www.oracle.com/technetwork/java/javase/documentation/index-jsp-135444.html}, RDoc\footnote{http://rdoc.sourceforge.net/}, etc. exist for documenting local APIs based on formatted comments from the source code. For RESTful API documentation, Swagger, RAML\footnote{http://raml.org/spec.html} and Blueprint provide custom API specification formats that can be used to describe RESTful APIs.
-
-Our work on SpyREST is a result of following the recommendations as found on the aforementioned related work as well as critically analyzing existing API documentation tools to identify the unmet requirements. Based on our analysis, we incorporated the following recommendations as requirements for SpyREST: automated RESTful API documentation, executable examples, consistent navigation and look and feel, software as a service model, wiki-like editing, automatic stripping of confidential and information overload, and in place collaboration.
+Our work on SpyREST is a result of following the recommendations as found on the aforementioned related work as well as critically analyzing existing API documentation tools such as JavaDoc, Swagger, and Blueprint, to identify the unmet requirements. Based on our analysis, we incorporated the following recommendations as requirements for SpyREST: automated RESTful API documentation, executable examples, consistent navigation and look and feel, software as a service model, wiki-like editing, automatic stripping of confidential and reducing information overload, and in place collaboration.
 
 \section{Conclusion}
 In this paper we have presented SpyREST as a prototype tool to demonstrate an automated solution to RESTful API documentation. Our main contribution is a novel tool that leverages a HTTP proxy server to intercept and automatically extract API documentation from example API calls. SpyREST provides an integrated tool for RESTful API documentation by providing features for automated generation, customization, maintenance, collaboration and executable examples under a single cloud based software as a service platform. By automating the repeated parts of the RESTful API documentation process, SpyREST provides a better alternative to the manual process. API developers can use SpyREST to save the time and cost associated with RESTful API documentation. In future we plan to conduct a quantitative evaluation by using SpyREST to auto generate documentation for a large set of RESTful APIs as well as involving API developers to collect qualitative feedback about the strengths and weaknesses of SpyREST.
