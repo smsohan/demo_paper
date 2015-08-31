@@ -27,17 +27,18 @@ R.~T. Fielding, ``Architectural styles and the design of network-based software
 
 \bibitem{Espinha_web}
 T.~Espinha, A.~Zaidman, and H.-G. Gross, ``Web {API} growing pains: Stories
-  from client developers and their code.''\hskip 1em plus 0.5em minus
-  0.4em\relax IEEE, 2014, pp. 84--93.
+  from client developers and their code,'' in \emph{Proc. of IEEE Conference on
+  Software Maintenance, Reengineering and Reverse Engineering
+  (CSMR-WCRE)}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2014, pp. 84--93.
 
 \bibitem{Danielsen_validation}
 P.~Danielsen and A.~Jeffrey, ``Validation and interactivity of web {API}
-  documentation,'' in \emph{International Conference on Web Services}.\hskip
-  1em plus 0.5em minus 0.4em\relax IEEE, 2013, pp. 523--530.
+  documentation,'' in \emph{Proc. of International Conference on Web Services
+  (ICWS)}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2013, pp. 523--530.
 
 \bibitem{Sohan_spyrest}
 S.~Sohan, C.~Anslow, and M.~Frank, ``{SpyREST}: Automated {RESTful API}
-  documentation using {HTTP} proxy server,'' in \emph{to appear in IEEE/ACM
+  documentation using {HTTP} proxy server,'' in \emph{Proc. of IEEE/ACM
   International Conference on Automated Software Engineering}, 2015.
 
 \bibitem{Robillard_what_makes}
@@ -61,48 +62,48 @@ D.~Hoffman and P.~Strooper, ``{API} documentation with executable examples,''
 \bibitem{Nasehi_what_makes}
 S.~M. Nasehi, J.~Sillito, F.~Maurer, and C.~Burns, ``What makes a good code
   example?: {A} study of programming {Q}{\&}{A} in {StackOverflow},'' in
-  \emph{{IEEE} International Conference on Software Maintenance}, 2012, pp.
-  25--34.
+  \emph{{IEEE} Proc. of International Conference on Software Maintenance
+  (ICSM)}, 2012, pp. 25--34.
 
 \bibitem{Parnin_measuring}
 C.~Parnin and C.~Treude, ``Measuring {API} documentation on the web,'' in
-  \emph{Proceedings of the International Workshop on Web 2.0 for Software
+  \emph{Proc. of the International Workshop on Web 2.0 for Software
   Engineering}, ser. Web2SE '11.\hskip 1em plus 0.5em minus 0.4em\relax ACM,
   2011, pp. 25--30.
 
 \bibitem{Chen_who_asked}
 C.~Chen and K.~Zhang, ``Who asked what: Integrating crowdsourced faqs into api
-  documentation,'' in \emph{Companion Proceedings of the International
-  Conference on Software Engineering}, ser. ICSE Companion 2014.\hskip 1em plus
-  0.5em minus 0.4em\relax ACM, 2014, pp. 456--459.
+  documentation,'' in \emph{Proc. of the International Conference on Software
+  Engineering Companion}, ser. ICSE Companion 2014.\hskip 1em plus 0.5em minus
+  0.4em\relax ACM, 2014, pp. 456--459.
 
 \bibitem{Stepalina_saas}
 E.~Stepalina, ``{SaaS} support in software documentation systems,'' in
-  \emph{Software Engineering Conference (CEE-SECR), 2010 6th Central and
-  Eastern European}, 2010, pp. 192--197.
+  \emph{Proc. of Central and Eastern European Software Engineering Conference
+  (CEE-SECR)}, 2010, pp. 192--197.
 
 \bibitem{Verborgh_functional}
 R.~Verborgh, T.~Steiner, D.~Van~Deursen, S.~Coppens, J.~G. Vall{\'e}s, and
   R.~Van~de Walle, ``Functional descriptions as the bridge between hypermedia
-  {API}s and the semantic web,'' in \emph{Proceedings of the Third
-  International Workshop on RESTful Design}, ser. WS-REST '12.\hskip 1em plus
-  0.5em minus 0.4em\relax ACM, 2012, pp. 33--40.
+  {API}s and the semantic web,'' in \emph{Proc. of the Third International
+  Workshop on RESTful Design}, ser. WS-REST '12.\hskip 1em plus 0.5em minus
+  0.4em\relax ACM, 2012, pp. 33--40.
 
 \bibitem{Mangler_rddl}
 J.~Mangler, P.~Beran, and E.~Schikuta, ``On the origin of services using riddl
   for description, evolution and composition of restful services,'' in
-  \emph{Cluster, Cloud and Grid Computing (CCGrid), IEEE/ACM International
-  Conference on}, 2010, pp. 505--508.
+  \emph{Proc. of IEEE/ACM International Conference on Cluster, Cloud and Grid
+  Computing (CCGrid)}, 2010, pp. 505--508.
 
 \bibitem{Kopecky_hrests}
-J.~Kopecky, K.~Gomadam, and T.~Vitvar, ``hrests: An html microformat for
+J.~Kopecky, K.~Gomadam, and T.~Vitvar, ``hrests: An {HTML} microformat for
   describing restful web services,'' in \emph{Proc. of International Conference
   on Web Intelligence and Intelligent Agent Technology (WI-IAT)}, vol.~1, 2008,
   pp. 619--625.
 
 \bibitem{Myers_study}
 B.~A. Myers, S.~Y. Jeong, Y.~Xie, J.~Beaton, J.~Stylos, R.~Ehret, J.~Karstens,
-  A.~Efeoglu, and D.~K. Busse, ``Studying the documentation of an api for
+  A.~Efeoglu, and D.~K. Busse, ``Studying the documentation of an {API} for
   enterprise service-oriented architecture,'' \emph{J. Organ. End User
   Comput.}, vol.~22, no.~1, pp. 23--51, 2010.
 
