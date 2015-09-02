@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  31 AUG 2015 10:18
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  2 SEP 2015 08:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -686,6 +686,10 @@ File: md-frame-0.mdf 2012/04/08 v1.5: md-frame-0
 Package zref Info: New property: mdf@pagevalue on input line 782.
 \mdf@horizontalspaceofbox=\skip103
 )
+(/usr/local/texlive/2012/texmf-dist/tex/latex/preprint/balance.sty
+Package: balance 1999/02/23 4.3 (PWD)
+\oldvsize=\dimen173
+)
 (./SpyREST_tool_demo.aux)
 \openout1 = `SpyREST_tool_demo.aux'.
 
@@ -715,13 +719,13 @@ Package caption Info: End \AtBeginDocument code.
 (/usr/local/texlive/2012/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count195
-\scratchdimen=\dimen173
+\scratchdimen=\dimen174
 \scratchbox=\box44
 \nofMPsegments=\count196
 \nofMParguments=\count197
 \everyMPshowfont=\toks22
 \MPscratchCnt=\count198
-\MPscratchDim=\dimen174
+\MPscratchDim=\dimen175
 \MPnumerator=\count199
 \makeMPintoPDFobject=\count200
 \everyMPtoPDFconversion=\toks23
@@ -865,7 +869,12 @@ File: omlptm.fd
 LaTeX Font Info:    Font shape `OML/ptm/m/n' in size <8> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 148.
  [4]
-(./SpyREST_tool_demo.bbl [5]
+(./SpyREST_tool_demo.bbl
+
+Package balance Warning: You have called \balance in second column
+(balance)                Columns might not be balanced.
+
+[5]
 ** WARNING: IEEEtran.bst: No hyphenation pattern has been
 ** loaded for the language `English'. Using the pattern for
 ** the default language instead.
@@ -884,28 +893,30 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[6
 
-] (./SpyREST_tool_demo.aux) ) 
+Overfull \vbox (1.61598pt too high) has occurred while \output is active []
+
+
+[6] (./SpyREST_tool_demo.aux) ) 
 Here is how much of TeX's memory you used:
- 11759 strings out of 493488
- 197015 string characters out of 3141326
- 315990 words of memory out of 3000000
- 14872 multiletter control sequences out of 15000+200000
+ 11777 strings out of 493488
+ 197382 string characters out of 3141326
+ 316380 words of memory out of 3000000
+ 14886 multiletter control sequences out of 15000+200000
  43654 words of font info for 82 fonts, out of 3000000 for 9000
  960 hyphenation exceptions out of 8191
  38i,12n,42p,2343b,1353s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/local/texlive/2012/texmf-dist/fonts/enc/dvip
-s/base/8r.enc}</usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmmi10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmmi8.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/c
-msy10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-sy8.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
-</usr/local/texlive/2012/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/loca
-l/texlive/2012/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive
-/2012/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2012/texm
-f-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on SpyREST_tool_demo.pdf (6 pages, 214627 bytes).
+{/usr/local/texlive/2012/texmf-dist/fonts/enc/dv
+ips/base/8r.enc}</usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmmi10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmmi8.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmsy10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmsy8.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/urw/courier/ucrr8a.pf
+b></usr/local/texlive/2012/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/lo
+cal/texlive/2012/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texli
+ve/2012/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2012/te
+xmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on SpyREST_tool_demo.pdf (6 pages, 214638 bytes).
 PDF statistics:
  67 PDF objects out of 1000 (max. 8388607)
  43 compressed objects within 1 object stream
